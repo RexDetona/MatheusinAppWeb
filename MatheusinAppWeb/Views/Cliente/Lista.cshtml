@@ -1,0 +1,63 @@
+﻿@model List<MatheusinAppWeb.Models.ClienteModel>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2>Lista de CLientes</h2>
+    </div>
+    <div class="card-body">
+            <div class="row">
+
+            <div class="col-2">
+
+                <a href="/Cliente/Cadastro" class="btn btn-success">Novo Cliente</a>
+            </div>
+            <div class="col-3">
+                <select name="tipoBusca" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="id">Busca por Id</option>
+                    <option value="nome">Busca por nome</option>
+                    <option value="telefone">Busca por telefone</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" name="Pesquisa" />
+            </div>
+            <div class="col-3">
+                <button class="btn btn-info" type="submit"> Pesquisar</button>
+            </div>
+        </div>
+    </div>
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th></th>
+                </tr>
+
+            </thead>
+            
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Telefone</td>
+                    <td>
+                        <a href="/Cliente/Editar/@item.Id" class="btn btn-warning">Editar</a>
+                        <a href="/Cliente/Compras/@item.Id" class="btn btn-success">Compras</a>
+                        <a href="/Cliente/Excluir/@item.Id" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+            </tbody>
+        </table>
+    </div>
+
+

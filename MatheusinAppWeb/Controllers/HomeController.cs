@@ -17,12 +17,17 @@ namespace MatheusinAppWeb.Controllers
         {
             return View();
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Login()
         {
             return View();
         }
